@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style12_1.css">
+    <title>Федячкина Камилла</title>
+</head>
+
+<body>
+    <div id="result">
+        <script>
+            let fruits = [' apple', ' pineapple', ' mango', ' melon', ' grape'];
+            let citrus = [' orange', ' lemon', ' lime'];
+            // 1. Вывод массива fruits
+            document.getElementById("result").innerHTML += "<p><b>Массив fruits:</b> " + fruits + ".</p>";
+
+            // 2. Вывод массива citrus
+            document.getElementById("result").innerHTML += "<p><b>Массив citrus:</b> " + citrus + ".</p>";
+
+            // 3. Объединенный массив fruits и citrus
+            let combinedFruits = fruits.concat(citrus);
+            document.getElementById("result").innerHTML += "<p><b>Объединенный массив fruits и citrus:</b> " + combinedFruits + ".</p>";
+
+            // 4. Вставка элементов после mango
+            let newFruits = fruits.slice(); // Создаем копию массива fruits
+            newFruits.splice(3, 0, ' pear', ' cherry', ' plum', ' raspberry', ' strawberry'); 
+            document.getElementById("result").innerHTML += "<p><b> Массив fruits (с вставкой):</b> " + newFruits + ".</p>";
+            
+            // 5. Удаление последних 3 элементов
+            let delFruits = fruits.slice(); // Создаем копию массива fruits
+            delFruits.splice(delFruits.length - 3, 3);
+            document.getElementById("result").innerHTML += "<p><b>Массив fruits, в котором удалены последние 3 элемента:</b> " + delFruits + ".</p>";
+
+            // 6. Сортировка в алфавитном порядке
+            let alphasortedFruits = fruits.slice();
+            alphasortedFruits.sort();
+            document.getElementById("result").innerHTML += "<p><b>Массив fruits в алфавитном порядке:</b> " + alphasortedFruits + ".</p>";
+
+
+            // 7. Сортировка в обратном алфавитном порядке
+            let alphasortedreversFruits = fruits.slice();
+            alphasortedreversFruits.sort().reverse();
+            document.getElementById("result").innerHTML += "<p><b>Массив fruits в обратном алфавитном порядке:</b> " + alphasortedreversFruits + ".</p>";
+
+            // 8. Сортировка по длине слов
+            let lensortedFruits = fruits.slice();
+            lensortedFruits.sort((a, b) => a.length - b.length);
+            document.getElementById("result").innerHTML += `<p><b>Массив fruits отсортированный по длинно слов:</b> ${lensortedFruits}  .</p> `;   
+        </script>
+    </div>
+</body>
+
+</html>
